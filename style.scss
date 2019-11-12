@@ -1,0 +1,92 @@
+$orange: #ff7f00;
+$white: #ffffbb;
+$yellow: yellow;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Tangerine", cursive;
+  font-size: 1.7em;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+li {
+  list-style-type: none;
+  width: 10vw;
+}
+nav {
+  background-color: $orange;
+  color: $white;
+  margin-bottom:-1em;
+  height: 80px;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+  li {
+    margin-top: 10px;
+    color: $white;
+    &:hover {
+      color: $yellow;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+}
+footer {
+
+  margin-top:-1em;
+  background-color: $orange;
+  color: $white;
+  li {
+    color: $white;
+    &:hover {
+      color: $yellow;
+    }
+  }
+}
+.title {
+  font-size: 150%;
+}
+.ring {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid $orange;
+  margin: 1em 1.5em;
+}
+section {
+  background-image:url("https://i.postimg.cc/ZqWX9nqN/papier.jpg");
+  margin-top:0em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+}
+.ring2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 7px solid $yellow;
+  margin-right:1em;
+}
+@mixin rings ($x, $y, $z, $color) {
+  height : $x;
+  width : $x;
+  border-radius : $y;
+  border: $z solid $color;
+}
+
+@for $i from 1 through 6 {
+  .rings#{$i} {
+    @include rings(10px*$i, 50%, 4px, #000000);
+
+  }
+}
+
